@@ -1,0 +1,135 @@
+@media only screen and (max-width: 800px) {
+  /*
+     * STRUCTURE
+     */
+  .headercontainter {
+    display: none;
+  }
+  .mobile-header {
+    display: block;
+  }
+  .mobile-header svg {
+    font-size: 40px;
+    padding: 20px;
+    color: #395850;
+    cursor: pointer;
+  }
+  .mobile-header svg :hover {
+    color: #3956aa;
+  }
+  .header-link {
+    color: aliceblue;
+  }
+  .child {
+    background-color: cadetblue;
+    position: absolute;
+    height: 100%;
+    padding: 20px;
+    display: none;
+    z-index: 10;
+  }
+  .header-language {
+    position: relative;
+    top: 25px;
+  }
+  .content-container {
+    flex-direction: column;
+  }
+  .item:nth-child(2) {
+    order: 1;
+  }
+
+  .item:nth-child(1) {
+    order: 2;
+  }
+  .lading-page-left {
+    width: 100%;
+  }
+  .lading-page-right {
+    width: 100%;
+  }
+  .lading-page-left img {
+    width: 100%;
+  }
+  .content-container {
+    margin-top: unset;
+  }
+  .big-text-content {
+    font-size: 40px;
+  }
+  .small-text-content {
+    display: none;
+  }
+  .content-container .btn {
+    float: unset;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .hirehub-form .image-container {
+    display: none;
+  }
+  .hirehub-container {
+    width: 100%;
+    top: 100px;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    display: block;
+    margin-bottom: 20px;
+    background-color: #eee;
+    font-size: 18px;
+    height: unset;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+  .hirehub-container .btn {
+    width: 100%;
+  }
+  .hirehub-form {
+    top: 10%;
+  }
+  .header-title {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #000;
+  }
+  .header-title :hover {
+    color: #395850;
+  }
+  .faq {
+    flex-direction: column;
+  }
+  .faq-title {
+    font-size: 20px;
+  }
+  .faq-item p {
+    color: #666;
+    font-size: 30px;
+  }
+}
