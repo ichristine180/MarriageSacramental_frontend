@@ -3,6 +3,7 @@ import {
   setChristian,
   setPartner,
   setSuccessMessage,
+  setUserApplication,
   setpartnerInvalid,
 } from "../_slice/globalSlice";
 import { request } from "../helper";
@@ -30,29 +31,6 @@ export const getChristian = (body) => async (dispatch) => {
   );
   if (data) dispatch(setChristian(data));
 };
-const BASE_URL = process.env.REACT_APP_API_URL;
-export const saveImage = async (imageFile, url, dispatch) => {
-  try {
-    const formData = new FormData();
-    formData.append("file", imageFile, imageFile.name);
-    dispatch(setIsLoading(true));
-    const response = await fetch(`${BASE_URL}/${url}`, {
-      method: "POST",
-      body: formData,
-    });
-    dispatch(setIsLoading(false));
-    if (!response.ok) {
-      throw new Error("Failed to upload image");
-    }
-    const data = await response.json();
-    const imageUrl = data.result.imageUrl;
-    return imageUrl;
-  } catch (error) {
-    dispatch(setIsLoading(false));
-    console.log(error);
-  }
-};
-
 export const validatePartner = (body) => async (dispatch) => {
   const data = await request(
     dispatch,
@@ -81,4 +59,13 @@ export const apply = (body, navigate) => async (dispatch) => {
     dispatch(setSuccessMessage(data.message));
     navigate("/");
   }
+};
+export const getUserApplication = (body, navigate) => async (dispatch) => {
+  const data = await request(
+    dispatch,
+    "application/one",
+    body,
+    localStorage.getItem("token")
+  );
+  if (data) dispatch(setUserApplication(data.result));
 };

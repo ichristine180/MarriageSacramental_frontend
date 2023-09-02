@@ -10,6 +10,7 @@ const initialState = {
   christian: null,
   partner: null,
   partnerInvalid: null,
+  userApplication: null,
 };
 
 const globalSlice = createSlice({
@@ -58,6 +59,9 @@ const globalSlice = createSlice({
       state.partner = null;
       state.partnerInvalid = null;
     },
+    setUserApplication(state, action) {
+      state.userApplication = action.payload;
+    },
   },
 });
 
@@ -74,6 +78,7 @@ export const {
   setPartner,
   setpartnerInvalid,
   clearPartner,
+  setUserApplication
 } = globalSlice.actions;
 
 export default globalSlice.reducer;
